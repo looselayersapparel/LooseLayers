@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TOPS - LOOSE LAYERS</title>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <style>
+        @font-face {
+            font-family: 'Rockybilly';
+            src: url('https://raw.githubusercontent.com/looselayersapparel/LooseLayers/c38b1dbf272b2f084a0b8a197dd6219d48ab5651/Rockybilly.woff2') format('woff2');
+            font-display: swap;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Courier New', monospace;
+            background: #000;
+            color: #e8e8e8;
+            overflow-x: hidden;
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 25px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            background: rgba(0, 0, 0, 0.95);
+            border-bottom: 2px solid #222;
+        }
+
+        .logo-container {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            margin-top: 10px;
+        }
+
+        .logo {
+            font-size: 16px;
+            font-weight: 900;
+            letter-spacing: 0px;
+            text-transform: uppercase;
+            color: #fff;
+            font-family: 'Rockybilly', cursive;
+            line-height: 1.5;
+            text-decoration: none;
+        }
+
+        .logo-tagline {
+            font-size: 7px;
+            font-family: 'Bebas Neue', 'Arial Black', sans-serif;
+            color: #fff;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            opacity: 0.9;
+            font-weight: 400;
+            margin-top: 3px;
+        }
+
+        .nav-right {
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 25px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: #e8e8e8;
+            text-decoration: none;
+            font-size: 16px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            font-weight: 700;
+            transition: all 0.3s;
+            border-bottom: 2px solid transparent;
+        }
+
+        .nav-links a:hover {
+            color: #fff;
+            border-bottom: 2px solid #fff;
+        }
+
+        .dropdown {
+            position: relative;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            top: 100%;
+            right: 0;
+            background: rgba(0, 0, 0, 0.98);
+            border: 2px solid #222;
+            min-width: 140px;
+            margin-top: 0px;
+            padding-top: 15px;
+            box-shadow: 5px 5px 0px rgba(255,255,255,0.1);
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .dropdown-content a {
+            display: block;
+            padding: 10px 15px;
+            border-bottom: 1px solid #222;
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 13px;
+        }
+
+        .dropdown-content a:last-child {
+            border-bottom: none;
+        }
+
+        .dropdown-content a:hover {
+            background: #fff;
+            color: #000;
+        }
+
+        .page-header {
+            padding: 150px 40px 80px 40px;
+            text-align: center;
+            background: #000;
+        }
+
+        .page-header h1 {
+            font-size: 80px;
+            font-family: 'Rockybilly', cursive;
+            color: #fff;
+            margin-bottom: 15px;
+            letter-spacing: 3px;
+        }
+
+        .page-header p {
+            font-size: 16px;
+            font-family: 'Bebas Neue', sans-serif;
+            color: #fff;
+            letter-spacing: 3px;
+            opacity: 0.8;
+        }
+
+        .products-grid {
+            padding: 60px 40px;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 40px;
+            background: #000;
+        }
+
+        .product-card {
+            position: relative;
+            overflow: hidden;
+            border: 3px solid #222;
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+
+        .product-card:hover {
+            border-color: #fff;
+            transform: translate(-3px, -3px);
+            box-shadow: 8px 8px 0px rgba(255, 255, 255, 0.2);
+        }
+
+        .product-image {
+            width: 100%;
+            height: 400px;
+            background: #1a1a1a;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #666;
+            font-size: 14px;
+        }
+
+        .product-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .product-info {
+            padding: 20px;
+            background: #0a0a0a;
+            border-top: 2px solid #222;
+        }
+
+        .product-name {
+            font-size: 18px;
+            font-family: 'Rockybilly', cursive;
+            color: #fff;
+            margin-bottom: 8px;
+        }
+
+        .product-price {
+            font-size: 16px;
+            font-family: 'Bebas Neue', sans-serif;
+            color: #fff;
+            letter-spacing: 1px;
+        }
+
+        footer {
+            padding: 60px 40px;
+            text-align: center;
+            background: #000;
+            border-top: 2px solid #222;
+        }
+
+        footer p {
+            font-size: 12px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            font-weight: 700;
+            opacity: 0.6;
+            font-family: 'Rockybilly', cursive;
+        }
+
+        @media (max-width: 768px) {
+            .page-header h1 {
+                font-size: 50px;
+            }
+
+            .products-grid {
+                grid-template-columns: 1fr;
+                padding: 40px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="index.html" style="text-decoration: none;">
+            <div class="logo-container">
+                <div class="logo">LOOSE LAYERS</div>
+                <div class="logo-tagline">Stay Worn - Stay Wild</div>
+            </div>
+        </a>
+        <div class="nav-right">
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li class="dropdown">
+                    <a href="#shop">Shop</a>
+                    <div class="dropdown-content">
+                        <a href="tops.html">Tops</a>
+                        <a href="layers.html">Layers</a>
+                        <a href="bottoms.html">Bottoms</a>
+                        <a href="headwear.html">Headwear</a>
+                        <a href="accessories.html">Accessories</a>
+                        <a href="newin.html">New In</a>
+                        <a href="sale.html">Sale</a>
+                    </div>
+                </li>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="page-header">
+        <h1>TOPS</h1>
+        <p>Tees, Shirts & More</p>
+    </section>
+
+    <section class="products-grid">
+        <!-- Example Product Cards - Replace with your actual products -->
+        <div class="product-card">
+            <div class="product-image">
+                <span>Product Image</span>
+            </div>
+            <div class="product-info">
+                <div class="product-name">Classic Tee</div>
+                <div class="product-price">$35.00</div>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <div class="product-image">
+                <span>Product Image</span>
+            </div>
+            <div class="product-info">
+                <div class="product-name">Oversized Shirt</div>
+                <div class="product-price">$45.00</div>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <div class="product-image">
+                <span>Product Image</span>
+            </div>
+            <div class="product-info">
+                <div class="product-name">Graphic Tee</div>
+                <div class="product-price">$40.00</div>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <div class="product-image">
+                <span>Product Image</span>
+            </div>
+            <div class="product-info">
+                <div class="product-name">Long Sleeve</div>
+                <div class="product-price">$50.00</div>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <div class="product-image">
+                <span>Product Image</span>
+            </div>
+            <div class="product-info">
+                <div class="product-name">Polo Shirt</div>
+                <div class="product-price">$55.00</div>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <div class="product-image">
+                <span>Product Image</span>
+            </div>
+            <div class="product-info">
+                <div class="product-name">Tank Top</div>
+                <div class="product-price">$30.00</div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2024 LOOSE LAYERS - STAY WORN STAY WILD</p>
+    </footer>
+</body>
+</html>
