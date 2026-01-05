@@ -325,39 +325,38 @@
             filter: grayscale(0%) contrast(120%);
         }
 
-        .item-overlay {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            padding: 30px;
-            background: linear-gradient(to top, rgba(0, 0, 0, 0.95), transparent);
-            transform: translateY(100%);
-            transition: transform 0.4s ease;
-            border-top: 3px solid #fff;
-            text-align: center;
-        }
+.item-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 30px;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.95), transparent);
+    transform: translateY(100%);
+    transition: transform 0.4s ease;
+    border-top: 3px solid #fff;
+    text-align: center;
+}
 
         .collection-item:hover .item-overlay {
             transform: translateY(0);
         }
 
-        .item-overlay h3 {
-            font-size: 18px;
-            font-weight: 900;
-            letter-spacing: 2px;
-            margin-bottom: 6px;
-            text-transform: uppercase;
-            color: #fff;
-            font-family: 'Rockybilly', cursive;
-        }
-
-        .item-overlay p {
-            font-size: 11px;
-            letter-spacing: 0.5px;
-            text-transform: uppercase;
-            font-weight: 700;
-        }
+  .item-overlay h3 {
+    font-size: 24px;
+    font-weight: 900;
+    letter-spacing: 2px;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    color: #fff;
+    font-family: 'Rockybilly', cursive;
+}
+    .item-overlay p {
+    font-size: 12px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-weight: 700;
+}
 
         .about {
             padding: 150px 40px;
