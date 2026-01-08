@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TOPS - LOOSE LAYERS</title>
-    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Staatliches&display=swap" rel="stylesheet">
     <style>
         @font-face {
-            font-family: 'Rockybilly';
-            src: url('https://raw.githubusercontent.com/looselayersapparel/LooseLayers/c38b1dbf272b2f084a0b8a197dd6219d48ab5651/Rockybilly.woff2') format('woff2');
+            font-family: 'SKATERDUDES';
+            src: url('SKATERDUDES.woff2') format('woff2');
             font-display: swap;
         }
 
@@ -46,19 +46,19 @@
         }
 
         .logo {
-            font-size: 16px;
+            font-size: 26px;
             font-weight: 900;
             letter-spacing: 0px;
             text-transform: uppercase;
             color: #fff;
-            font-family: 'Rockybilly', cursive;
+            font-family: 'SKATERDUDES', cursive;
             line-height: 1.5;
             text-decoration: none;
         }
 
         .logo-tagline {
-            font-size: 7px;
-            font-family: 'Bebas Neue', 'Arial Black', sans-serif;
+            font-size: 16px;
+            font-family: 'Staatliches', sans-serif;
             color: #fff;
             letter-spacing: 2px;
             text-transform: uppercase;
@@ -119,8 +119,8 @@
             display: block;
             padding: 10px 15px;
             border-bottom: 1px solid #222;
-             font-family: 'Rockybilly', cursive;
-            font-size: 8px;
+            font-family: 'Staatliches', sans-serif;
+            font-size: 13px;
         }
 
         .dropdown-content a:last-child {
@@ -133,41 +133,44 @@
         }
 
         .page-header {
-            padding: 150px 40px 80px 40px;
+            padding: 150px 40px 60px 40px;
             text-align: center;
             background: #000;
         }
 
         .page-header h1 {
-            font-size: 80px;
-            font-family: 'Rockybilly', cursive;
+            font-size: 150px;
+            font-family: 'SKATERDUDES', cursive;
             color: #fff;
             margin-bottom: 15px;
             letter-spacing: 3px;
         }
 
         .page-header p {
-            font-size: 16px;
-            font-family: 'Bebas Neue', sans-serif;
+            font-size: 30px;
+            font-family: 'Staatliches', sans-serif;
             color: #fff;
             letter-spacing: 3px;
             opacity: 0.8;
         }
 
-        .products-grid {
+        .products-container {
             padding: 60px 40px;
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 40px;
             background: #000;
         }
 
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 40px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
         .product-card {
-            position: relative;
-            overflow: hidden;
             border: 3px solid #222;
             transition: all 0.3s;
-            cursor: pointer;
+            background: #0a0a0a;
         }
 
         .product-card:hover {
@@ -178,13 +181,12 @@
 
         .product-image {
             width: 100%;
-            height: 400px;
+            height: 350px;
             background: #1a1a1a;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: #666;
-            font-size: 14px;
+            overflow: hidden;
         }
 
         .product-image img {
@@ -193,24 +195,60 @@
             object-fit: cover;
         }
 
+        .product-placeholder {
+            color: #666;
+            font-size: 14px;
+            text-align: center;
+        }
+
         .product-info {
-            padding: 20px;
-            background: #0a0a0a;
-            border-top: 2px solid #222;
+            padding: 25px;
         }
 
         .product-name {
-            font-size: 18px;
-            font-family: 'Rockybilly', cursive;
+            font-size: 22px;
+            font-family: 'SKATERDUDES', cursive;
             color: #fff;
-            margin-bottom: 8px;
+            margin-bottom: 10px;
+            letter-spacing: 1px;
+        }
+
+        .product-description {
+            font-size: 13px;
+            color: #aaa;
+            margin-bottom: 15px;
+            line-height: 1.6;
         }
 
         .product-price {
-            font-size: 16px;
-            font-family: 'Bebas Neue', sans-serif;
+            font-size: 24px;
+            font-family: 'Staatliches', sans-serif;
             color: #fff;
             letter-spacing: 1px;
+            margin-bottom: 20px;
+        }
+
+        .buy-button {
+            display: block;
+            width: 100%;
+            padding: 15px;
+            background: #fff;
+            color: #000;
+            text-align: center;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 900;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            border: 3px solid #fff;
+            transition: all 0.3s;
+            font-family: 'Staatliches', sans-serif;
+        }
+
+        .buy-button:hover {
+            background: #000;
+            color: #fff;
+            transform: translateY(-2px);
         }
 
         footer {
@@ -226,12 +264,12 @@
             text-transform: uppercase;
             font-weight: 700;
             opacity: 0.6;
-            font-family: 'Rockybilly', cursive;
+            font-family: 'SKATERDUDES', cursive;
         }
 
         @media (max-width: 768px) {
             .page-header h1 {
-                font-size: 50px;
+                font-size: 45px;
             }
 
             .products-grid {
@@ -272,69 +310,64 @@
 
     <section class="page-header">
         <h1>HEADWEAR</h1>
-        <p>Beanies, Caps & Hats</p>
+        <p>BEANIES, CAPS & HATS</p>
     </section>
 
-    <section class="products-grid">
-        <!-- Example Product Cards - Replace with your actual products -->
-        <div class="product-card">
-            <div class="product-image">
-                <span>Product Image</span>
+    <section class="products-container">
+        <div class="products-grid">
+            
+            <!-- Product 1 -->
+            <div class="product-card">
+                <div class="product-image">
+                    <div class="product-placeholder">Add Product Image</div>
+                </div>
+                <div class="product-info">
+                    <div class="product-name">Classic Tee</div>
+                    <div class="product-description">100% cotton oversized fit. Perfect for everyday wear.</div>
+                    <div class="product-price">$35.00</div>
+                    <a href="https://buy.stripe.com/YOUR-STRIPE-LINK-HERE" class="buy-button">Buy Now</a>
+                </div>
             </div>
-            <div class="product-info">
-                <div class="product-name">Classic Tee</div>
-                <div class="product-price">$35.00</div>
-            </div>
-        </div>
 
-        <div class="product-card">
-            <div class="product-image">
-                <span>Product Image</span>
+            <!-- Product 2 -->
+            <div class="product-card">
+                <div class="product-image">
+                    <div class="product-placeholder">Add Product Image</div>
+                </div>
+                <div class="product-info">
+                    <div class="product-name">Graphic Tee</div>
+                    <div class="product-description">Bold street graphics. Premium heavyweight cotton.</div>
+                    <div class="product-price">$40.00</div>
+                    <a href="https://buy.stripe.com/YOUR-STRIPE-LINK-HERE" class="buy-button">Buy Now</a>
+                </div>
             </div>
-            <div class="product-info">
-                <div class="product-name">Oversized Shirt</div>
-                <div class="product-price">$45.00</div>
-            </div>
-        </div>
 
-        <div class="product-card">
-            <div class="product-image">
-                <span>Product Image</span>
+            <!-- Product 3 -->
+            <div class="product-card">
+                <div class="product-image">
+                    <div class="product-placeholder">Add Product Image</div>
+                </div>
+                <div class="product-info">
+                    <div class="product-name">Long Sleeve</div>
+                    <div class="product-description">Oversized long sleeve with distressed details.</div>
+                    <div class="product-price">$50.00</div>
+                    <a href="https://buy.stripe.com/YOUR-STRIPE-LINK-HERE" class="buy-button">Buy Now</a>
+                </div>
             </div>
-            <div class="product-info">
-                <div class="product-name">Graphic Tee</div>
-                <div class="product-price">$40.00</div>
-            </div>
-        </div>
 
-        <div class="product-card">
-            <div class="product-image">
-                <span>Product Image</span>
+            <!-- Product 4 -->
+            <div class="product-card">
+                <div class="product-image">
+                    <div class="product-placeholder">Add Product Image</div>
+                </div>
+                <div class="product-info">
+                    <div class="product-name">Vintage Wash Tee</div>
+                    <div class="product-description">Worn-in vintage feel. Soft and comfortable.</div>
+                    <div class="product-price">$38.00</div>
+                    <a href="https://buy.stripe.com/YOUR-STRIPE-LINK-HERE" class="buy-button">Buy Now</a>
+                </div>
             </div>
-            <div class="product-info">
-                <div class="product-name">Long Sleeve</div>
-                <div class="product-price">$50.00</div>
-            </div>
-        </div>
 
-        <div class="product-card">
-            <div class="product-image">
-                <span>Product Image</span>
-            </div>
-            <div class="product-info">
-                <div class="product-name">Polo Shirt</div>
-                <div class="product-price">$55.00</div>
-            </div>
-        </div>
-
-        <div class="product-card">
-            <div class="product-image">
-                <span>Product Image</span>
-            </div>
-            <div class="product-info">
-                <div class="product-name">Tank Top</div>
-                <div class="product-price">$30.00</div>
-            </div>
         </div>
     </section>
 
